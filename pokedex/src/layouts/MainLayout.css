@@ -118,7 +118,7 @@ html, body, #root {
 .pokedex-button-sprite {
   width: 75px;
   height: 75px;
-  background-image: url('../sprites/boton -pokeBall.webp');
+  background-image: url('../sprites/boton-pokeBall.webp');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
