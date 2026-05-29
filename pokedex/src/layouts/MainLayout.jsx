@@ -47,7 +47,7 @@ export default function MainLayout() {
       <div className="pokedex-footer">
         <div className="pokedex-controls">
           <div className="arrow-left" onClick={handlePrev}></div>
-          <button className="pokedex-button-sprite" onClick={handleSelect}></button>
+          <div className="pokedex-button-sprite" onClick={handleSelect}></div>          
           <div className="arrow-right" onClick={handleNext}></div>
         </div>
         

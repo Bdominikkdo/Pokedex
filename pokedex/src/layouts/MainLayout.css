@@ -116,9 +116,10 @@ html, body, #root {
 .arrow-right:active { transform: scale(0.9); }
 
 .pokedex-button-sprite {
+  display: block;
   width: 75px;
   height: 75px;
-  background-image: url('../sprites/boton-pokeBall.webp');
+  background-image: url('../sprites/boton-pokeball.webp');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -284,12 +285,11 @@ html, body, #root {
   text-shadow: 0 0 2px white;
 }
 
-/* --- NUEVO BOTÓN DE FILTRO QUE BAJA CON EL SCROLL --- */
 .sidebar-toggle-btn {
   position: sticky;
-  top: 0px;            /* Se clava arriba de la pantalla mientras bajas */
-  left: 100%;          /* Se empuja hacia el extremo derecho */
-  margin-bottom: -35px;/* Truco: evita dejar un hueco en blanco arriba de los Pokémon */
+  top: 0px;            
+  left: 100%;          
+  margin-bottom: -35px;
   z-index: 10;
   background-color: #333;
   color: white;
