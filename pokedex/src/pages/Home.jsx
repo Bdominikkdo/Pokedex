@@ -69,7 +69,6 @@ export default function Home() {
       const pokemonRegion = getRegionByPokemonId(p.id);
       const matchesRegion = selectedRegion === "all" || pokemonRegion === selectedRegion;
 
-      // Lógica de filtrado por rarezas independientes
       let matchesSpecial = true;
       if (specialFilter === "legendary") {
         matchesSpecial = legendaryIds.includes(p.id);
