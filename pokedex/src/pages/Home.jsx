@@ -134,7 +134,6 @@ export default function Home() {
           {currentPokemon.types.map((t) => (
             <span key={t.type.name} className={`type-badge ${t.type.name}`}>{t.type.name}</span>
           ))}
-          {/* Etiquetas añadidas dinámicamente en los detalles */}
           {legendaryIds.includes(currentPokemon.id) && <span className="type-badge legendary">Legendario</span>}
           {mythicalIds.includes(currentPokemon.id) && <span className="type-badge mythical">Mítico</span>}
         </div>
@@ -165,13 +164,12 @@ export default function Home() {
     <div className="screen-container-relative" style={{ position: "relative", height: "100%", overflowY: "auto" }}>
       
       <button className="sidebar-toggle-btn" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
-        {isSidebarOpen ? "✕" : "🔍 Filtrar"}
+        {isSidebarOpen ? "✕ Cerrar" : "🔍 Filtrar"}
       </button>
 
       <div className={`filter-sidebar ${isSidebarOpen ? "open" : ""}`}>
         <h3>Filtros Pokédex</h3>
         
-        {/* Contadores actualizados para separar Legendarios de Míticos */}
         <div style={{ fontSize: '10px', background: '#e0e0e0', padding: '6px', borderRadius: '5px', lineHeight: '1.4' }}>
           <div><strong>Resultados:</strong> {filteredPokemon.length}</div>
           <div><strong>Legendarios:</strong> {filteredPokemon.filter(p => legendaryIds.includes(p.id)).length}</div>
@@ -188,7 +186,6 @@ export default function Home() {
           />
         </div>
 
-        {/* Dropdown actualizado con la opción de Míticos */}
         <div className="filter-group">
           <label>Rareza:</label>
           <select value={specialFilter} onChange={(e) => setSpecialFilter(e.target.value)}>
