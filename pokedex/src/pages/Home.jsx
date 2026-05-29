@@ -163,15 +163,16 @@ export default function Home() {
   return (
     <div className="screen-container-relative" style={{ position: "relative", height: "100%", overflowY: "auto" }}>
       
-      <button className="sidebar-toggle-btn" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
-        {isSidebarOpen ? "✕ Cerrar" : "🔍 Filtrar"}
-      </button>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "5px 10px" }}>
+        <span style={{ fontSize: "12px", fontWeight: "bold", color: "#333" }}>Resultados: {filteredPokemon.length}</span>
+        <button className="sidebar-toggle-btn" onClick={() => setIsSidebarOpen(!isSidebarOpen)} style={{ position: "static", marginBottom: "0" }}>
+          {isSidebarOpen ? "✕ Ocultar" : "🔍 Filtrar"}
+        </button>
+      </div>
 
-      <div className={`filter-sidebar ${isSidebarOpen ? "open" : ""}`}>
-        <h3>Filtros Pokédex</h3>
+      <div className={`filter-sidebar ${isSidebarOpen ? "open" : ""}`} style={{ position: "relative", width: "100%", right: "auto", top: "auto", boxShadow: "none", background: "#f0f0f0", borderRadius: "10px", margin: "5px 0" }}>
         
-        <div style={{ fontSize: '10px', background: '#e0e0e0', padding: '6px', borderRadius: '5px', lineHeight: '1.4' }}>
-          <div><strong>Resultados:</strong> {filteredPokemon.length}</div>
+        <div style={{ fontSize: '10px', background: '#e0e0e0', padding: '6px', borderRadius: '5px', lineHeight: '1.4', display: "flex", gap: "15px", justifyContent: "center", marginBottom: "8px" }}>
           <div><strong>Legendarios:</strong> {filteredPokemon.filter(p => legendaryIds.includes(p.id)).length}</div>
           <div><strong>Míticos:</strong> {filteredPokemon.filter(p => mythicalIds.includes(p.id)).length}</div>
         </div>
