@@ -92,7 +92,7 @@ html, body, #root {
 .arrow-left {
   width: 45px;
   height: 45px;
-  background-image: url('../sprites/flecha-menu-izquierda.webp');
+  background-image: url('/sprites/flecha-menu-izquierda.webp');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -105,7 +105,7 @@ html, body, #root {
 .arrow-right {
   width: 45px;
   height: 45px;
-  background-image: url('../sprites/flecha-menu-derecha.webp');
+  background-image: url('/sprites/flecha-menu-derecha.webp');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -116,10 +116,10 @@ html, body, #root {
 .arrow-right:active { transform: scale(0.9); }
 
 .pokedex-button-sprite {
-  display: block;
+  display: inline-block;
   width: 75px;
   height: 75px;
-  background-image: url('../sprites/boton-pokeball.webp');
+  background-image: url('/sprites/boton-pokeball.webp');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -285,12 +285,8 @@ html, body, #root {
   text-shadow: 0 0 2px white;
 }
 
+/* --- FILTROS DESPLEGABLES --- */
 .sidebar-toggle-btn {
-  position: sticky;
-  top: 0px;            
-  left: 100%;          
-  margin-bottom: -35px;
-  z-index: 10;
   background-color: #333;
   color: white;
   border: 2px solid #222;
@@ -315,27 +311,46 @@ html, body, #root {
 }
 
 .filter-sidebar.open {
-  max-height: 500px; 
+  max-height: 550px; 
   opacity: 1;
   padding: 10px;
 }
 
-.sidebar-toggle-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 110;
-  background-color: #333;
-  color: white;
-  border: 2px solid #222;
-  border-radius: 20px;
-  padding: 6px 14px;
-  font-size: 11px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+.filter-group {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.sidebar-toggle-btn:hover {
-  background-color: #555;
+.filter-group label {
+  font-size: 11px;
+  font-weight: bold;
+  color: #444;
+}
+
+.filter-group input, .filter-group select {
+  padding: 6px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.clear-filters-btn {
+  width: 100%;
+  padding: 8px;
+  background-color: #dc0a2d;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 11px;
+  margin-top: 5px;
+}
+
+.clear-filters-btn:hover {
+  background-color: #8b0000;
 }
